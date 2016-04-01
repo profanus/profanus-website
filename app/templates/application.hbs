@@ -1,3 +1,20 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div layout="column" tabindex="-1" role="main" flex>
+  {{#paper-toolbar class="app-toolbar md-whiteframe-z1"}}
+    <div class="toolbar-wrapper">
+      <div class="site-logo">
+        <img src="assets/img/logo.png" alt="banner" />
+      </div>
+      <div class="toolbar-content" layout="row" layout-align="space-between center">
+        <h3 class="name">Profanus</h3>
+        {{#paper-button accent=true action=(action 'recruit')}}
+          Recruitment
+        {{/paper-button}}
+      </div>
+    </div>
+  {{/paper-toolbar}}
+  {{#paper-content class="main-content"}}
+  <div class="content-wrapper">
+    {{liquid-outlet}}
+  </div>
+  {{/paper-content}}
+</div>

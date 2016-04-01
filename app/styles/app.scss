@@ -1,0 +1,105 @@
+$theme-name: "default";
+
+$primary: "grey";
+$accent: "red";
+$warn: "red";
+$background: "grey";
+$link: "red";
+
+$dark: true;
+$default-color: '900';
+
+$foreground: "foreground-light";
+
+$base-background-color: #424242;
+$base-color: rgba(255, 255, 255, 0.87);
+
+@import 'ember-paper';
+
+body > div.ember-view {
+  height: 100%;
+  div[role="main"] {
+    height: 100%;
+
+    md-content {
+      height: 100%;
+
+      background-image: url(img/background.jpg);
+      background-repeat: repeat;
+      background-position: center;
+    }
+  }
+}
+
+.content-wrapper, .toolbar-wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.app-toolbar {
+  .toolbar-wrapper {
+    padding-left: 18px;
+  }
+  .toolbar-content {
+    max-width: 80%;
+  }
+
+  .site-logo {
+    float: right;
+    width: 0;
+    height: 0;
+    img {
+      margin-left: -90px;
+      margin-top: 6px;
+      width: 100px;
+      height: auto;
+    }
+  }
+  h3 {
+    color: color('red');
+  }
+}
+
+md-card {
+  background-color: color('grey', '900');
+  md-card-title h3 {
+    margin-top: 0;
+  }
+
+  md-card-title ~ md-card-content {
+    margin-top: -18px;
+  }
+
+  .md-actions button {
+    max-width: 50%;
+  }
+}
+
+.raid-logs {
+  h4 {
+    margin: 0 0 3px 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 3px;
+      &:before {
+        content: '> '
+      }
+    }
+  }
+
+  a {
+    color: color($accent);
+    text-decoration: none;
+    transition: color 200ms ease-in;
+
+    &:hover {
+      color: color($accent, '700');
+    }
+  }
+}

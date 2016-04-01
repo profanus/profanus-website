@@ -1,0 +1,23 @@
+<div flex layout-gt-md="row" layout-align="space-between start">
+  <div flex>
+    {{#each model.posts as |post|}}
+      {{post-preview post=post openPost=(action 'transition' post.id)}}
+    {{else}}
+      {{post-preview post=(hash title="There is nothing here!" excerpt="Come back soon for new stuff.")}}
+    {{/each}}
+  </div>
+  <div flex=20>
+    {{#paper-card class="raid-logs"}}
+      {{#paper-card-title}}
+        <h3>Raid logs</h3>
+      {{/paper-card-title}}
+      {{#paper-card-content}}
+        {{#each model.raidLogs as |log|}}
+          {{raid-logs log=log}}
+        {{else}}
+          No logs are available.
+        {{/each}}
+      {{/paper-card-content}}
+    {{/paper-card}}
+  </div>
+</div>

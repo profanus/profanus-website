@@ -1,0 +1,15 @@
+{{post-navigation navigate=(action 'transition')}}
+{{#paper-card}}
+  {{#if model.image}}
+    <img src={{model.image.source}} alt={{model.image.alt}} />
+  {{/if}}
+  {{#if model.title}}
+    {{#paper-card-title}}
+      <h3>{{model.title}}</h3>
+    {{/paper-card-title}}
+  {{/if}}
+  {{#paper-card-content}}
+    {{markdown-to-html markdown=model.content}}
+  {{/paper-card-content}}
+{{/paper-card}}
+{{post-navigation navigate=(action 'transition')}}
