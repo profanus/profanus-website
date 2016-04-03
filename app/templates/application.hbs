@@ -5,16 +5,27 @@
         <img src="assets/img/logo.png" alt="banner" />
       </div>
       <div class="toolbar-content" layout="row" layout-align="space-between center">
-        <h3 class="name">Profanus</h3>
-        {{#paper-button accent=true action=(action 'recruit')}}
+        <h3 class="name">{{#link-to 'index'}}Profanus{{/link-to}}</h3>
+        <div>
+        {{#paper-button accent=true action=(route-action 'transitionTo' 'recruitment')}}
           Recruitment
         {{/paper-button}}
+        {{#paper-button accent=true action=(route-action 'transitionTo' 'info')}}
+          Info & Rules
+        {{/paper-button}}
+        </div>
       </div>
     </div>
   {{/paper-toolbar}}
   {{#paper-content class="main-content"}}
   <div class="content-wrapper">
+    {{#if (not-eq currentRouteName "index")}}
+      {{index-navigation navigate=(route-action 'transitionTo' 'index')}}
+    {{/if}}
     {{liquid-outlet}}
+    {{#if (not-eq currentRouteName "index")}}
+      {{index-navigation navigate=(route-action 'transitionTo' 'index')}}
+    {{/if}}
   </div>
   {{/paper-content}}
 </div>

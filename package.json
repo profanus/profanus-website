@@ -40,7 +40,9 @@
     "ember-load-initializers": "^0.5.1",
     "ember-paper": "0.2.12",
     "ember-resolver": "^2.0.3",
+    "ember-route-action-helper": "0.3.0",
     "ember-suave": "2.0.1",
+    "ember-truth-helpers": "1.2.0",
     "emberfire": "1.6.6",
     "liquid-fire": "0.23.0",
     "loader.js": "^4.0.1"

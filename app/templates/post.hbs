@@ -1,15 +1,13 @@
-{{post-navigation navigate=(action 'transition')}}
 {{#paper-card}}
   {{#if model.image}}
-    <img src={{model.image.source}} alt={{model.image.alt}} />
+    <img src={{model.image.source}} alt={{model.image.alt}} data-post-id={{model.id}} />
   {{/if}}
   {{#if model.title}}
     {{#paper-card-title}}
-      <h3>{{model.title}}</h3>
+      <h3 data-post-id={{model.id}}>{{model.title}}</h3>
     {{/paper-card-title}}
   {{/if}}
   {{#paper-card-content}}
     {{markdown-to-html markdown=model.content}}
   {{/paper-card-content}}
 {{/paper-card}}
-{{post-navigation navigate=(action 'transition')}}

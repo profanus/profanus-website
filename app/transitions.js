@@ -1,8 +1,26 @@
+const options = {
+  easing: 'spring',
+  duration: 500
+};
+
 export default function() {
   this.transition(
-    this.fromRoute('index'),
     this.toRoute('post'),
-    this.use('crossFade'),
-    this.reverse('crossFade')
+    this.use('toLeft', options)
+  );
+
+  this.transition(
+    this.toRoute('recruitment'),
+    this.use('toLeft', options)
+  );
+
+  this.transition(
+    this.toRoute('info'),
+    this.use('toLeft', options)
+  );
+
+  this.transition(
+    this.toRoute('index'),
+    this.use('toUp', options)
   );
 }

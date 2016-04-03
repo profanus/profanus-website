@@ -1,13 +1,13 @@
 <div flex layout-gt-md="row" layout-align="space-between start">
   <div flex>
     {{#each model.posts as |post|}}
-      {{post-preview post=post openPost=(action 'transition' post.id)}}
+      {{post-preview post=post openPost=(route-action 'transitionTo' 'post' post.id)}}
     {{else}}
       {{post-preview post=(hash title="There is nothing here!" excerpt="Come back soon for new stuff.")}}
     {{/each}}
   </div>
   <div flex=20>
-    {{#paper-card class="raid-logs"}}
+    {{#paper-card class="raid-logs animated bounceInDown"}}
       {{#paper-card-title}}
         <h3>Raid logs</h3>
       {{/paper-card-title}}
