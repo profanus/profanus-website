@@ -69,10 +69,24 @@ md-card {
 
   md-card-title ~ md-card-content {
     margin-top: -18px;
+
+    img {
+      max-width: 100%;
+    }
   }
 
   .md-actions button {
     max-width: 50%;
+  }
+}
+
+a {
+  color: color($accent);
+  text-decoration: none;
+  transition: color 200ms ease-in;
+
+  &:hover {
+    color: color($accent, '700');
   }
 }
 
@@ -90,16 +104,6 @@ md-card {
       &:before {
         content: '> '
       }
-    }
-  }
-
-  a {
-    color: color($accent);
-    text-decoration: none;
-    transition: color 200ms ease-in;
-
-    &:hover {
-      color: color($accent, '700');
     }
   }
 }
