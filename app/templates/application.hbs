@@ -1,17 +1,22 @@
-<div layout="column" tabindex="-1" role="main" flex>
-  {{#paper-toolbar class="app-toolbar md-whiteframe-z1"}}
+<div class={{media.classNames}} layout="column" tabindex="-1" role="main" flex>
+  {{#paper-toolbar class=(concat "app-toolbar md-whiteframe-z1 " (if media.isXs 'md-tall'))}}
     <div class="toolbar-wrapper">
       <div class="site-logo">
         <img src="assets/img/logo.png" alt="banner" />
       </div>
-      <div class="toolbar-content" layout="row" layout-align="space-between center">
+      <div class="toolbar-content"
+        layout="column"
+        layout-align="center start"
+        layout-gt-sm="row"
+        layout-align-gt-sm="space-between center"
+        >
         <h3 class="name">{{#link-to 'index'}}Profanus{{/link-to}}</h3>
         <div>
         {{#paper-button accent=true action=(route-action 'transitionTo' 'recruitment')}}
           Recruitment
         {{/paper-button}}
         {{#paper-button accent=true action=(route-action 'transitionTo' 'info')}}
-          Info & Rules
+          Info
         {{/paper-button}}
         </div>
       </div>

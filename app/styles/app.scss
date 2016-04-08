@@ -50,14 +50,22 @@ body > div.ember-view {
     width: 0;
     height: 0;
     img {
-      margin-left: -90px;
-      margin-top: 6px;
+      margin-left: -102px;
+      margin-top: 12px;
       width: 100px;
       height: auto;
     }
   }
   h3 {
     color: color('red');
+    margin-left: 12px;
+  }
+}
+
+.media-gt-md {
+  .site-logo img {
+    margin-left: -90px;
+    top: 10px;
   }
 }
 
