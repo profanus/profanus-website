@@ -11,7 +11,7 @@
   {{#paper-card-content}}
     {{markdown-to-html markdown=post.excerpt}}
   {{/paper-card-content}}
-  {{#if openPost}}
+  {{#if (and openPost post.hasContent)}}
     <div class="md-actions" layout="row" layout-align="end center">
       {{#paper-button accent=true action=(action openPost)}}Read more{{/paper-button}}
     </div>

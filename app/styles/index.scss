@@ -1,0 +1,25 @@
+.raid-logs {
+  h4 {
+    margin: 0 0 3px 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 3px;
+      &:before {
+        content: '> '
+      }
+    }
+  }
+
+  md-card-content > div {
+    margin-bottom: 12px;
+  }
+}
+
+.index-navigation {
+  animation-duration: 600ms;
+}

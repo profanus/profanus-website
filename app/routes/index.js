@@ -13,6 +13,13 @@ export default Route.extend({
           return ajax.request(`/posts/${postId}/description.json`).then((post) => {
             post.id = postId;
 
+            if (post['has-content'] !== false) {
+              post.hasContent = true;
+            } else {
+              post.hasContent = false;
+            }
+            post['has-content'] = undefined;
+
             return post;
           });
         }));
