@@ -7,5 +7,10 @@ export default Ember.Route.extend({
       let actualArguments = args.filter((a) => a !== null && a !== undefined);
       this.transitionTo(...actualArguments);
     }
+  },
+
+  ajax: Ember.inject.service(),
+  model() {
+    return this.get('ajax').request('/raid-logs.json').then((content) => content.logs);
   }
 });

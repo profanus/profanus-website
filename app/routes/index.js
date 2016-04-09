@@ -7,24 +7,21 @@ export default Route.extend({
   model() {
     let ajax = this.get('ajax');
 
-    return RSVP.hash({
-      posts: ajax.request('/posts.json').then((content) => {
-        return RSVP.all(content.posts.map((postId) => {
-          return ajax.request(`/posts/${postId}/description.json`).then((post) => {
-            post.id = postId;
+    return ajax.request('/posts.json').then((content) => {
+      return RSVP.all(content.posts.map((postId) => {
+        return ajax.request(`/posts/${postId}/description.json`).then((post) => {
+          post.id = postId;
 
-            if (post['has-content'] !== false) {
-              post.hasContent = true;
-            } else {
-              post.hasContent = false;
-            }
-            post['has-content'] = undefined;
+          if (post['has-content'] !== false) {
+            post.hasContent = true;
+          } else {
+            post.hasContent = false;
+          }
+          post['has-content'] = undefined;
 
-            return post;
-          });
-        }));
-      }),
-      raidLogs: ajax.request('/raid-logs.json').then((content) => content.logs)
+          return post;
+        });
+      }));
     });
   }
 });

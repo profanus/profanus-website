@@ -1,30 +1,5 @@
-<div flex layout-gt-md="row" layout-align="space-between start">
-  <div flex>
-    {{#each model.posts as |post|}}
-      {{post-preview post=post openPost=(route-action 'transitionTo' 'post' post.id)}}
-    {{else}}
-      {{post-preview post=(hash title="There is nothing here!" excerpt="Come back soon for new stuff.")}}
-    {{/each}}
-  </div>
-  <div flex=20 layout="row" layout-gt-md="column">
-    {{#paper-card class="wow-progress animated fadeIn"}}
-      {{#paper-card-content}}
-        <a href="http://www.wowprogress.com/guild/eu/ragnaros/Profanus" target="_BLANK">
-          <img alt="WoW Guild Rankings" src="http://wowprogress.com/guild_img/829204/out/type.site" border="0"/>
-        </a>
-      {{/paper-card-content}}
-    {{/paper-card}}
-    {{#paper-card class="raid-logs animated fadeIn" flex=true}}
-      {{#paper-card-title}}
-        <h3>Raid logs</h3>
-      {{/paper-card-title}}
-      {{#paper-card-content}}
-        {{#each model.raidLogs as |log|}}
-          {{raid-logs log=log}}
-        {{else}}
-          No logs are available.
-        {{/each}}
-      {{/paper-card-content}}
-    {{/paper-card}}
-  </div>
-</div>
+{{#each model as |post|}}
+  {{post-preview post=post openPost=(route-action 'transitionTo' 'post' post.id)}}
+{{else}}
+  {{post-preview post=(hash title="There is nothing here!" excerpt="Come back soon for new stuff.")}}
+{{/each}}

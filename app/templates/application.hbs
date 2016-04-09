@@ -27,7 +27,34 @@
     {{#if (not-eq currentRouteName "index")}}
       {{index-navigation navigate=(route-action 'transitionTo' 'index')}}
     {{/if}}
-    {{liquid-outlet}}
+    <div flex layout="column" layout-gt-sm="row" layout-align="space-between stretch" >
+      <div flex flex-order="2" flex-order-gt-sm="0">
+        {{liquid-outlet}}
+      </div>
+      <div layout="row" layout-gt-sm="column" flex-sm flex-xs>
+        <div flex-xs flex-sm>
+        {{#paper-card class="raid-logs animated fadeIn"}}
+          {{#paper-card-title}}
+            <h3>Raid logs</h3>
+          {{/paper-card-title}}
+          {{#paper-card-content}}
+            {{#each model as |log|}}
+              {{raid-logs log=log}}
+            {{else}}
+              No logs are available.
+            {{/each}}
+          {{/paper-card-content}}
+        {{/paper-card}}
+        </div>
+        {{#paper-card class="wow-progress animated fadeIn"}}
+          {{#paper-card-content}}
+            <a href="http://www.wowprogress.com/guild/eu/ragnaros/Profanus" target="_BLANK">
+              <img alt="WoW Guild Rankings" src="http://wowprogress.com/guild_img/829204/out/type.site" border="0"/>
+            </a>
+          {{/paper-card-content}}
+        {{/paper-card}}
+      </div>
+    </div>
     {{#if (not-eq currentRouteName "index")}}
       {{index-navigation navigate=(route-action 'transitionTo' 'index')}}
     {{/if}}
