@@ -1,7 +1,7 @@
 <div data-post-id={{post.id}}>
 {{#paper-card}}
   {{#if post.image}}
-    <img src={{post.image.source}} alt={{post.image.alt}} />
+    <img src={{post.image.source}} alt={{post.image.alt}} title={{post.image.alt}} />
   {{/if}}
   {{#if post.title}}
     {{#paper-card-title}}

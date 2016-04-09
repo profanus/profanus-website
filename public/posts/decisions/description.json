@@ -1,6 +1,9 @@
 {
   "title": "Decisions were made",
   "excerpt": "We have decided on raid days (Wednesday and Monday) and our noble guild leader has written a code of conduct. Please check out the [guild info](/#/info) page for more info.",
-  "image": null,
+  "image": {
+    "source": "/posts/decisions/image.jpg",
+    "alt": "One of your officers, making decisions"
+  },
   "has-content": false
 }
