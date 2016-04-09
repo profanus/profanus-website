@@ -1,5 +1,5 @@
 const options = {
-  easing: 'spring',
+  // easing: 'spring',
   duration: 500
 };
 
@@ -11,12 +11,12 @@ export default function() {
 
   this.transition(
     this.toRoute('recruitment'),
-    this.use('toLeft', options)
+    this.use('toDown', options)
   );
 
   this.transition(
     this.toRoute('info'),
-    this.use('toLeft', options)
+    this.use('toDown', options)
   );
 
   this.transition(
