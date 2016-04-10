@@ -6,6 +6,10 @@
     max-width: 80%;
   }
 
+  .back-button {
+    margin: 0;
+  }
+
   .site-logo {
     float: right;
     width: 0;
@@ -17,9 +21,11 @@
       height: auto;
     }
   }
-  h3 {
-    color: color('red');
-    margin-left: 12px;
+  .name {
+    h3 {
+      color: color('red');
+      font-weight: normal;
+    }
   }
 }
 
@@ -30,5 +36,27 @@
   }
   h3 {
     margin-left: 0;
+  }
+}
+
+.raid-logs {
+  h4 {
+    margin: 0 0 3px 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: 3px;
+      &:before {
+        content: '> '
+      }
+    }
+  }
+
+  .raid-log {
+    margin-bottom: 12px;
   }
 }
