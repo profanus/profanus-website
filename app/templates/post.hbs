@@ -1,10 +1,10 @@
-{{#paper-card class="animated fadeIn"}}
+{{#paper-card class="animated fadeIn post-content"}}
   {{#if model.image}}
     <img src={{model.image.source}} alt={{model.image.alt}} title={{model.image.alt}} data-post-id={{model.id}} />
   {{/if}}
   {{#if model.title}}
     {{#paper-card-title}}
-      <h3 data-post-id={{model.id}}>{{model.title}}</h3>
+      <h2 data-post-id={{model.id}}>{{model.title}}</h2>
     {{/paper-card-title}}
   {{/if}}
   {{#paper-card-content}}

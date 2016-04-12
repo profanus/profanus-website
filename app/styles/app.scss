@@ -40,7 +40,7 @@ body > div.ember-view {
 
 md-card {
   background-color: color('grey', '900');
-  md-card-title h3 {
+  md-card-title h2 {
     margin-top: 0;
   }
 
@@ -70,3 +70,4 @@ a {
 @import 'application';
 @import 'index';
 @import 'info';
+@import 'post';

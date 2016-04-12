@@ -23,4 +23,10 @@ export default function() {
     this.toRoute('index'),
     this.use('toUp', options)
   );
+
+  this.transition(
+    this.fromRoute('post'),
+    this.toRoute('index'),
+    this.use('toRight')
+  );
 }
