@@ -13,8 +13,9 @@ is the first set of notes.
   smooth and fast. Please do so at the latest before the next raid.
   
 * If you win loot, you should hold on to it. If you don't want an item, don't roll. We have
-  seen some people trade loot after the fact, but we really don't like that. It bybasses our
-  loot system and it doesn't help the guild.
+  seen some people trade loot after the fact and while this seems like a nice thing to do, it 
+  bybasses our loot system and it doesn't help the guild. If you really do not want an item
+  you got, please ask us to put it up for a roll again.
   
 * When we go mythic, we will start using the loot council system for all loot, not just trinkets,
   weapons and tier.
@@ -42,7 +43,7 @@ and other places soon in order to get the team ready ASAP.
 * We will organize events in which we will all try to collect materials for the guild
   bank. There will be prizes of some sort to reward the biggest contributors.
   
-* We will also be handing out a small weekly price to whoever contributed most to
+* We will also be handing out a small weekly prize to whoever contributed most to
   the guild bank that week.
   
 We hope these points make sense, but feel to ask questions in Slack or in game.
