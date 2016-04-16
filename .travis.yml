@@ -23,15 +23,16 @@ script:
 
 after_success: |
   if [ -n "$GITHUB_API_KEY" ]; then
-    cd "$TRAVIS_BUILD_DIR"
-    # This generates a `dist` directory containing the website.
+    rm -rf dist || exit 0;
     npm build
+
     cd dist
     git init
+    git config user.name "Travis CI"
+    git config user.email "info@profanus.eu"
+
     git add .
-    git -c user.name='travis' -c user.email='travis' commit -m init
-    # Make sure to make the output quiet, or else the API token will leak!
-    # This works because the API key can replace your password.
+    git commit -m "Deploy to GitHub Pages"
+
     git push -f -q https://joukevandermaas:$GITHUB_API_KEY@github.com/profanus/profanus.github.io master &2>/dev/null
-    cd "$TRAVIS_BUILD_DIR"
   fi
