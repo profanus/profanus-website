@@ -1,6 +1,11 @@
 {
   "logs": [
     {
+      "date": "April 18",
+      "warcraftLogs": "https://www.warcraftlogs.com/reports/NMFZ26hjrKmzVtY7/",
+      "mrRobot": "http://www.askmrrobot.com/wow/combatlog/99d9f8cc-f5f9-41da-ae9b-a52233693634/overview"
+    },
+    {
       "date": "April 13",
       "warcraftLogs": "https://www.warcraftlogs.com/reports/ZckLfFHrwYqXN9Gn/",
       "mrRobot": "http://www.askmrrobot.com/wow/combatlog/4b3033c7-8448-4832-be92-3e38cce558ef/overview"
