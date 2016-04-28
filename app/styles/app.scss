@@ -40,21 +40,7 @@ body > div.ember-view {
 
 md-card {
   background-color: color('grey', '900');
-  md-card-title h2 {
-    margin-top: 0;
-  }
-
-  md-card-title ~ md-card-content {
-    margin-top: -18px;
-
-    img {
-      max-width: 100%;
-    }
-  }
-
-  .md-actions button {
-    max-width: 50%;
-  }
+  color: $light-contrast-color;
 }
 
 a {

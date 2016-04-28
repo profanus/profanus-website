@@ -1,9 +1,25 @@
-.app-toolbar {
+md-toolbar.md-default-theme.app-toolbar {
+  background-color: color('grey', '900');
+  color: $light-contrast-color;
+
+  .md-button:not([disabled]).md-default-theme {
+    &.md-accent {
+      color: color('red');
+    }
+    &:not(.md-accent) {
+      color: $light-contrast-color;
+    }
+
+    md-icon {
+      color: inherit;
+    }
+  }
+
   .toolbar-wrapper {
     padding-left: 18px;
   }
   .toolbar-content {
-    max-width: 80%;
+    max-width: 78%;
   }
 
   .back-button {
@@ -40,23 +56,7 @@
 }
 
 .raid-logs {
-  h4 {
-    margin: 0 0 3px 0;
-  }
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      padding: 3px;
-      &:before {
-        content: '> '
-      }
-    }
-  }
-
-  .raid-log {
-    margin-bottom: 12px;
+  .md-subhead, md-icon {
+    color: $light-contrast-color;
   }
 }

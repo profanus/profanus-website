@@ -1,8 +1,10 @@
-{{#paper-card class="animated fadeIn"}}
-  {{#paper-card-title}}
-    <h2>Joining Profanus</h2>
-  {{/paper-card-title}}
-  {{#paper-card-content}}
+{{#paper-card class="animated fadeIn" as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Joining Profanus{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
     <p>
       Welcome to the Profanus recruitment page. Before you apply, make sure to read our
       {{#link-to 'info'}}guild info{{/link-to}}.
@@ -21,11 +23,10 @@
       {{officer-link 'Awesan' 'Waesane'}}, {{officer-link 'Wakrash' 'Wakramash'}} or {{officer-link 'Muhveli'}} in game.
       If you feel confident that you are a good match for us, apply using our recruitment form:
     </p>
-
-    <div class="md-actions" flex layout="row" layout-align="center center">
-      {{#paper-button action=(route-action 'recruit')}}
-      Apply to join
-      {{/paper-button}}
-    </div>
-  {{/paper-card-content}}
+  {{/card.content}}
+  {{#card.actions class="layout-row layout-align-center-center"}}
+    {{#paper-button onClick=(route-action 'openLink' 'http://goo.gl/forms/kdPQYYDOwG')}}
+    Apply to join
+    {{/paper-button}}
+  {{/card.actions}}
 {{/paper-card}}

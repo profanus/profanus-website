@@ -4,20 +4,20 @@
       <div class="site-logo">
         <img src="assets/img/logo.png" alt="banner" />
       </div>
-      <div class="toolbar-content" layout="column" layout-align="center start" layout-gt-sm="row" layout-align-gt-sm="space-between center">
+      <div class="toolbar-content layout-row layout-xs-column layout-align-space-between-center layout-align-xs-space-between-start">
         <div layout="row" layout-align="start center" class="name">
           {{#liquid-if (not (eq currentRouteName 'index'))}}
-            {{#paper-button action=(route-action 'transitionTo' 'index') accent=true icon-button=true class="back-button"}}
-              {{paper-icon 'arrow-back'}}
+            {{#paper-button onClick=(route-action 'transitionTo' 'index') accent=true iconButton=true class="back-button"}}
+              {{paper-icon 'arrow_back'}}
             {{/paper-button}}
           {{/liquid-if}}
           <h3>{{#link-to 'index'}}Profanus{{/link-to}}</h3>
         </div>
         <div>
-        {{#paper-button accent=true action=(route-action 'transitionTo' 'recruitment')}}
+        {{#paper-button accent=true onClick=(route-action 'transitionTo' 'recruitment')}}
           Recruitment
         {{/paper-button}}
-        {{#paper-button accent=true action=(route-action 'transitionTo' 'info')}}
+        {{#paper-button accent=true onClick=(route-action 'transitionTo' 'info')}}
           Info
         {{/paper-button}}
         </div>
@@ -32,31 +32,30 @@
         {{liquid-outlet}}
       </div>
 
-      <div layout="column" flex-sm flex-xs>
-        <div flex-xs flex-sm>
-        {{#paper-card class="raid-logs animated fadeIn"}}
-          {{#paper-card-title}}
-            <h3>Raid logs</h3>
-          {{/paper-card-title}}
-          {{#paper-card-content}}
-            <div layout-sm="row" layout-align="space-around center">
-            {{#each model as |log|}}
-              {{raid-logs log=log class="raid-log"}}
-            {{else}}
-              No logs are available.
-            {{/each}}
-            </div>
-          {{/paper-card-content}}
+      <div layout="row" layout-gt-sm="column" flex-sm flex-xs layout-align="center stretch" layout-align-gt-sm="start stretch">
+        {{#paper-card class="raid-logs animated fadeIn flex-sm" as |card|}}
+          {{#card.header as |header|}}
+            {{#header.avatar}}
+              {{paper-icon 'trending_up'}}
+            {{/header.avatar}}
+            {{#header.text as |text|}}
+              {{#text.title}}Raid Logs{{/text.title}}
+              {{#text.subhead}}Overview{{/text.subhead}}
+            {{/header.text}}
+          {{/card.header}}
+          {{#card.actions class="flex layout-column layout-align-space-around-stretch"}}
+            {{#paper-button onClick=(route-action 'openLink' 'https://www.warcraftlogs.com/guilds/4765')}}Warcraft Logs{{/paper-button}}
+            {{#paper-button onClick=(route-action 'openLink' 'http://www.askmrrobot.com/wow/combatlog/guild/eu/ragnaros/profanus')}}Ask Mr. Robot{{/paper-button}}
+          {{/card.actions}}
         {{/paper-card}}
-        </div>
-        {{#paper-card class="wow-progress animated fadeIn"}}
-          {{#paper-card-content}}
-          <div flex layout="row" layout-align="center center">
-            <a href="http://www.wowprogress.com/guild/eu/ragnaros/Profanus" target="_BLANK">
-              <img alt="WoW Guild Rankings" src="http://wowprogress.com/guild_img/829204/out/type.site" border="0"/>
-            </a>
-          </div>
-          {{/paper-card-content}}
+        {{#paper-card class="wow-progress animated fadeIn flex-sm" as |card|}}
+          {{#card.content}}
+            <div flex layout="row" layout-align="center center">
+              <a href="http://www.wowprogress.com/guild/eu/ragnaros/Profanus" target="_BLANK">
+                <img alt="WoW Guild Rankings" src="http://wowprogress.com/guild_img/829204/out/type.site" border="0"/>
+              </a>
+            </div>
+          {{/card.content}}
         {{/paper-card}}
       </div>
     </div>

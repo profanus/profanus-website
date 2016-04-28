@@ -1,22 +1,26 @@
-{{#paper-card class="animated fadeIn"}}
-  {{#paper-card-title}}
-    <h2>Information</h2>
-  {{/paper-card-title}}
-  {{#paper-card-content}}
+{{#paper-card class="animated fadeIn" as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Information{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
     <p>
       <a href="http://eu.battle.net/wow/en/guild/ragnaros/Profanus/" target="_BLANK">Profanus</a>
       is a raiding guild on Ragnaros EU. We raid twice a week; on Wednesday and Monday.
       Raids happen from 20:00 until 23:00 server time. If you're thinking about joining us, please
       fill out our {{#link-to 'recruitment'}}recruitment form{{/link-to}}.
     </p>
-  {{/paper-card-content}}
+  {{/card.content}}
 {{/paper-card}}
 
-{{#paper-card class="animated fadeIn code-of-conduct"}}
-  {{#paper-card-title}}
-    <h2>Code of Conduct</h2>
-  {{/paper-card-title}}
-  {{#paper-card-content}}
+{{#paper-card class="animated fadeIn code-of-conduct" as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Code of Conduct{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
     <p>
     We are committed to maintaining a peaceful, comfortable and tolerant community
     with people we consider friends and 'family'. As a member you are expected to
@@ -98,5 +102,5 @@
       Should any revisions be added to this, members will be notified accordingly.
     </p>
 
-  {{/paper-card-content}}
+  {{/card.content}}
 {{/paper-card}}

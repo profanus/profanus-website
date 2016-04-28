@@ -1,20 +1,22 @@
 <div data-post-id={{post.id}}>
-{{#paper-card class="animated fadeIn"}}
+{{#paper-card class="animated fadeIn" as |card|}}
   {{#if post.image}}
-    <img src={{post.image.source}} alt={{post.image.alt}} title={{post.image.alt}} />
+    {{card.image src=post.image.source alt=post.image.alt title=post.image.alt}}
   {{/if}}
   {{#if post.title}}
-    {{#paper-card-title}}
-      <h2>{{post.title}}</h2>
-    {{/paper-card-title}}
+    {{#card.title as |title|}}
+      {{#title.text as |text|}}
+        {{#text.headline}}{{post.title}}{{/text.headline}}
+      {{/title.text}}
+    {{/card.title}}
   {{/if}}
-  {{#paper-card-content}}
+  {{#card.content}}
     {{markdown-to-html markdown=post.excerpt}}
-  {{/paper-card-content}}
+  {{/card.content}}
   {{#if (and openPost post.hasContent)}}
-    <div class="md-actions" layout="row" layout-align="end center">
-      {{#paper-button accent=true action=(action openPost)}}Read more{{/paper-button}}
-    </div>
+    {{#card.actions}}
+      {{#paper-button accent=true onClick=(action openPost)}}Read more{{/paper-button}}
+    {{/card.actions}}
   {{/if}}
 {{/paper-card}}
 </div>
