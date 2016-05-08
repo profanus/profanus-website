@@ -53,6 +53,12 @@ a {
   }
 }
 
+hr {
+  border: none;
+  border-bottom: 1px solid rgba($light-contrast-color, .3);
+  width: 70%;
+}
+
 @import 'application';
 @import 'index';
 @import 'info';
