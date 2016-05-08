@@ -30,14 +30,17 @@ what is acceptable and what is not. Starting tomorrow (Monday may 9), the
 following rules will apply:
 
 1. For mythic raids, you cannot bring alts unless we ask you to;
-2. For upper HFC, you can bring alts, provided they have an item level of at least *710*;
-3. For lower HFC, you can bring alts, provided they have an item level of at least *705*;
+
+2. For upper HFC, you can bring alts, provided they have an item level of at least *710* and your main at least *720*;
+
+3. For lower HFC, you can bring alts, provided they have an item level of at least *705* and your main at least *715*;
+
 4. If we ask you to log your main, you must do so;
+
 5. Alts will have lowest priority from the loot council.
 
-Alts are nice way to keep raid content fun, but they should not get in the
-way of our progress into mythic. We hope the rules above make sense from this
-perspective, and we think everyone should be able to live with them.
+Alts are nice way to keep raid content fun, but they should not get in the way of our progress into mythic.
+We think these rules will enable both. 
 
 ---
 
