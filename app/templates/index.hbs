@@ -1,5 +1,5 @@
 {{#each model as |post|}}
-  {{post-preview post=post openPost=(route-action 'transitionTo' 'post' post.id)}}
+  {{post-preview post=post postUrl=(href-to 'post' post.id)}}
 {{else}}
   {{post-preview post=(hash title="There is nothing here!" excerpt="Come back soon for new stuff.")}}
 {{/each}}

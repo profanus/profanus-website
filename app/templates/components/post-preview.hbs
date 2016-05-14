@@ -6,16 +6,22 @@
   {{#if post.title}}
     {{#card.title as |title|}}
       {{#title.text as |text|}}
-        {{#text.headline}}{{post.title}}{{/text.headline}}
+        {{#text.headline}}
+          {{#if (and postUrl post.hasContent)}}
+            <a href={{postUrl}}>{{post.title}}</a>
+          {{else}}
+            {{post.title}}
+          {{/if}}
+        {{/text.headline}}
       {{/title.text}}
     {{/card.title}}
   {{/if}}
   {{#card.content}}
     {{markdown-to-html markdown=post.excerpt}}
   {{/card.content}}
-  {{#if (and openPost post.hasContent)}}
+  {{#if (and postUrl post.hasContent)}}
     {{#card.actions}}
-      {{#paper-button accent=true onClick=(action openPost)}}Read more{{/paper-button}}
+      {{#paper-button accent=true href=postUrl}}Read more{{/paper-button}}
     {{/card.actions}}
   {{/if}}
 {{/paper-card}}
