@@ -44,8 +44,12 @@
             {{/header.text}}
           {{/card.header}}
           {{#card.actions class="flex layout-column layout-align-space-around-stretch"}}
-            {{#paper-button onClick=(route-action 'openLink' 'https://www.warcraftlogs.com/guilds/4765')}}Warcraft Logs{{/paper-button}}
-            {{#paper-button onClick=(route-action 'openLink' 'http://www.askmrrobot.com/wow/combatlog/guild/eu/ragnaros/profanus')}}Ask Mr. Robot{{/paper-button}}
+            {{#paper-button href='https://www.warcraftlogs.com/guilds/4765' target="_blank"}}
+              Warcraft Logs
+            {{/paper-button}}
+            {{#paper-button href='http://www.askmrrobot.com/wow/combatlog/guild/eu/ragnaros/profanus' target="_blank"}}
+              Ask Mr. Robot
+            {{/paper-button}}
           {{/card.actions}}
         {{/paper-card}}
         {{#paper-card class="wow-progress animated fadeIn flex-sm" as |card|}}

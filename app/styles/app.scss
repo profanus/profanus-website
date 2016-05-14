@@ -43,7 +43,7 @@ md-card {
   color: $light-contrast-color;
 }
 
-a {
+a:not(.md-button) {
   color: color($accent);
   text-decoration: none;
   transition: color 200ms ease-in;

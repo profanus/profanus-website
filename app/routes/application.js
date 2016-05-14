@@ -5,10 +5,6 @@ export default Ember.Route.extend({
     transitionTo() {
       let args = Array.prototype.slice.call(arguments, 0, -1);
       this.transitionTo(...args);
-    },
-
-    openLink(url) {
-      window.open(url, '_blank');
     }
   }
 });
