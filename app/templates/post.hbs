@@ -12,6 +12,6 @@
     {{/card.title}}
   {{/if}}
   {{#card.content}}
-    {{markdown-to-html markdown=model.content}}
+    {{md-text text=model.content linkify=true}}
   {{/card.content}}
 {{/paper-card}}

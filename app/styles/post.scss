@@ -7,5 +7,13 @@
     h3 {
       margin: 24px 0 -3px 0;
     }
+
+    table {
+      th, td {
+        padding: 12px 18px;
+        border: 1px solid $light-contrast-color;
+        text-align: center;
+      }
+    }
   }
 }

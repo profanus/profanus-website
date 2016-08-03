@@ -17,7 +17,7 @@
     {{/card.title}}
   {{/if}}
   {{#card.content}}
-    {{markdown-to-html markdown=post.excerpt}}
+    {{md-text text=post.excerpt linkify=true}}
   {{/card.content}}
   {{#if (and postUrl post.hasContent)}}
     {{#card.actions}}
