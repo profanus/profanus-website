@@ -1,0 +1,10 @@
+{
+  "name": "Profanus Guild Website",
+  "description": "Website for the guild Profanus on Ragnaros EU",
+  "repository": "https://github.com/profanus/profanus-website",
+  "logo": "https://raw.githubusercontent.com/profanus/profanus-website/master/public/assets/img/logo.png",
+  "keywords": ["ember.js", "static", "profanus", "guild", "ragnaros"],
+  "buildpacks": [
+    { "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/emberjs.tgz" }
+  ]
+}

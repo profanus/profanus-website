@@ -2,7 +2,6 @@
 
 module.exports = function(environment) {
   var ENV = {
-    firebase: 'https://profanus.firebaseio.com/',
     modulePrefix: 'profanus',
     environment: environment,
     baseURL: '/',
