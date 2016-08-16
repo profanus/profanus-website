@@ -1,11 +1,13 @@
 import Ember from 'ember';
 
-const Component = Ember.Component.extend({
+const { Component, computed } = Ember;
+
+const OfficerLink = Component.extend({
   tagName: 'a',
   name: '',
   character: '',
 
-  url: Ember.computed('name', 'character', function() {
+  url: computed('name', 'character', function() {
     let { name, character } = this.getProperties('name', 'character');
     let urlFragment = character || name;
 
@@ -15,8 +17,8 @@ const Component = Ember.Component.extend({
   attributeBindings: ['url:href', 'character:title']
 });
 
-Component.reopenClass({
+OfficerLink.reopenClass({
   positionalParams: ['name', 'character']
 });
 
-export default Component;
+export default OfficerLink;

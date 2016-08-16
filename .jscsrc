@@ -1,3 +1,5 @@
 {
-  "preset": "ember-suave"
+  "preset": "ember-suave",
+  "excludeFiles": ["modules/ember-paper/**"],
+  "requireCommentsToIncludeAccess": null
 }
