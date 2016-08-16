@@ -13,4 +13,4 @@ AppRouter.map(function() {
   this.route('info');
 });
 
-export default Router;
+export default AppRouter;
