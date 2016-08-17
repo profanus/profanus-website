@@ -7,17 +7,17 @@
       <div class="toolbar-content layout-row layout-xs-column layout-align-space-between-center layout-align-xs-space-between-start">
         <div layout="row" layout-align="start center" class="name">
           {{#liquid-if (not (eq currentRouteName 'index'))}}
-            {{#paper-button href=(href-to 'index') accent=true iconButton=true class="back-button"}}
+            {{#paper-button href=(href-to 'index') accent=true iconButton=true class="href-to back-button"}}
               {{paper-icon 'arrow_back'}}
             {{/paper-button}}
           {{/liquid-if}}
           <h3>{{#link-to 'index'}}Profanus{{/link-to}}</h3>
         </div>
         <div>
-        {{#paper-button accent=true href=(href-to 'recruitment')}}
+        {{#paper-button class="href-to" accent=true href=(href-to 'recruitment')}}
           Recruitment
         {{/paper-button}}
-        {{#paper-button accent=true href=(href-to 'info')}}
+        {{#paper-button accent=true class="href-to" href=(href-to 'info')}}
           Info
         {{/paper-button}}
         </div>

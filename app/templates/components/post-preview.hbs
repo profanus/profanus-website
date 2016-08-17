@@ -8,7 +8,7 @@
       {{#title.text as |text|}}
         {{#text.headline}}
           {{#if (and postUrl post.hasContent)}}
-            <a href={{postUrl}}>{{post.title}}</a>
+            <a class="href-to" href={{postUrl}}>{{post.title}}</a>
           {{else}}
             {{post.title}}
           {{/if}}
@@ -21,7 +21,7 @@
   {{/card.content}}
   {{#if (and postUrl post.hasContent)}}
     {{#card.actions}}
-      {{#paper-button accent=true href=postUrl}}Read more{{/paper-button}}
+      {{#paper-button accent=true class="href-to" href=postUrl}}Read more{{/paper-button}}
     {{/card.actions}}
   {{/if}}
 {{/paper-card}}
