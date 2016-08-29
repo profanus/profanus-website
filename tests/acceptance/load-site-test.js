@@ -5,9 +5,9 @@ moduleForAcceptance('Acceptance | load site');
 
 // smoke test to see that the app actually boots
 test('can visit the recruitment page', function(assert) {
-  visit('/recruitment');
+  visit('/info');
 
   andThen(function() {
-    assert.equal(currentURL(), '/recruitment');
+    assert.equal(currentURL(), '/info');
   });
 });
