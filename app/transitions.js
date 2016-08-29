@@ -20,6 +20,11 @@ export default function() {
   );
 
   this.transition(
+    this.toRoute('rules'),
+    this.use('toDown', options)
+  );
+
+  this.transition(
     this.toRoute('index'),
     this.use('toUp', options)
   );

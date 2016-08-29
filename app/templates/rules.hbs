@@ -1,0 +1,15 @@
+{{#paper-card class="animated fadeIn" as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Raiding with Profanus{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
+    {{md-text text=model linkify=true}}
+  {{/card.content}}
+  {{#card.actions class="layout-row layout-align-center-center"}}
+    {{#paper-button href=(href-to 'info') class="href-to"}}
+    Apply to join
+    {{/paper-button}}
+  {{/card.actions}}
+{{/paper-card}}

@@ -1,11 +1,16 @@
 <div class="page-wrapper {{media.classNames}} {{currentRouteName}}" layout="column" tabindex="-1" role="main" flex>
-  {{#paper-toolbar class=(concat "app-toolbar md-whiteframe-z1 " (if media.isXs 'md-tall'))}}
+  {{#paper-toolbar class=(concat "app-toolbar md-whiteframe-z1 " (if isMenuExpanded "md-tall"))}}
     <div class="toolbar-wrapper">
       <div class="site-logo">
         <img src="assets/img/logo.png" alt="banner" />
       </div>
-      <div class="toolbar-content layout-row layout-xs-column layout-align-space-between-center layout-align-xs-space-between-start">
+      <div class="toolbar-content">
         <div layout="row" layout-align="start center" class="name">
+          {{#if (not media.isGtSm)}}
+            {{#paper-button onClick=(action 'toggleMenu') iconButton=true}}
+              {{paper-icon 'menu'}}
+            {{/paper-button}}
+          {{/if}}
           {{#liquid-if (not (eq currentRouteName 'index'))}}
             {{#paper-button href=(href-to 'index') accent=true iconButton=true class="href-to back-button"}}
               {{paper-icon 'arrow_back'}}
@@ -13,14 +18,16 @@
           {{/liquid-if}}
           <h3>{{#link-to 'index'}}Profanus{{/link-to}}</h3>
         </div>
-        <div>
-        {{#paper-button class="href-to" accent=true href=(href-to 'recruitment')}}
-          Recruitment
-        {{/paper-button}}
-        {{#paper-button accent=true class="href-to" href=(href-to 'info')}}
-          Info
-        {{/paper-button}}
-        </div>
+        {{#liquid-if isMenuExpanded}}
+          <div class="top-menu" layout="row" layout-align="start center">
+            {{#paper-button primary=true href=(href-to 'info') class="href-to"}}
+              Info &amp; Recruitment
+            {{/paper-button}}
+            {{#paper-button primary=true href=(href-to 'rules') class="href-to"}}
+              Rules
+            {{/paper-button}}
+          </div>
+        {{/liquid-if}}
       </div>
     </div>
   {{/paper-toolbar}}
@@ -32,25 +39,44 @@
         {{liquid-outlet}}
       </div>
 
-      <div layout="column" layout-sm="row" layout-gt-sm="column" flex-sm flex-xs layout-align="center stretch" layout-align-gt-sm="start stretch">
+      <div class="aside" layout="column" layout-sm="row" layout-gt-sm="column" flex-sm flex-xs layout-align="center stretch" layout-align-gt-xs="start stretch">
+        {{#paper-card class="side-menu" as |card|}}
+          {{#card.title as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}{{paper-icon "menu"}} Links{{/text.headline}}
+            {{/title.text}}
+          {{/card.title}}
+          {{#paper-list}}
+            {{#paper-item}}
+              <a class="flex href-to" href={{href-to 'info'}}>
+                {{paper-icon 'keyboard-arrow-right'}} Info &amp; Recruitment
+              </a>
+            {{/paper-item}}
+            {{#paper-item}}
+              <a class="flex href-to" href={{href-to 'rules'}}>
+                {{paper-icon 'keyboard-arrow-right'}} Guild Rules
+              </a>
+            {{/paper-item}}
+          {{/paper-list}}
+        {{/paper-card}}        
         {{#paper-card class="raid-logs animated fadeIn flex-sm" as |card|}}
-          {{#card.header as |header|}}
-            {{#header.avatar}}
-              {{paper-icon 'trending_up'}}
-            {{/header.avatar}}
-            {{#header.text as |text|}}
-              {{#text.title}}Raid Logs{{/text.title}}
-              {{#text.subhead}}Overview{{/text.subhead}}
-            {{/header.text}}
-          {{/card.header}}
-          {{#card.actions class="flex layout-column layout-align-space-around-stretch"}}
-            {{#paper-button href='https://www.warcraftlogs.com/guilds/4765' target="_blank"}}
-              Warcraft Logs
-            {{/paper-button}}
-            {{#paper-button href='http://www.askmrrobot.com/wow/combatlog/guild/eu/ragnaros/profanus' target="_blank"}}
-              Ask Mr. Robot
-            {{/paper-button}}
-          {{/card.actions}}
+          {{#card.title as |title|}}
+            {{#title.text as |text|}}
+              {{#text.headline}}{{paper-icon "trending-up"}} Raid logs{{/text.headline}}
+            {{/title.text}}
+          {{/card.title}}
+          {{#paper-list}}
+            {{#paper-item}}
+              <a class="flex" href='https://www.warcraftlogs.com/guilds/4765' target="_blank">
+                {{paper-icon 'keyboard-arrow-right'}} Warcraft Logs
+              </a>
+            {{/paper-item}}
+            {{#paper-item}}
+              <a class="flex" href='http://www.askmrrobot.com/wow/combatlog/guild/eu/ragnaros/profanus' target="_blank">
+                {{paper-icon 'keyboard-arrow-right'}} Ask Mr. Robot
+              </a>
+            {{/paper-item}}
+          {{/paper-list}}
         {{/paper-card}}
         {{#paper-card class="wow-progress animated fadeIn flex-sm" as |card|}}
           {{#card.content}}

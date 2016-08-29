@@ -28,15 +28,17 @@ md-toolbar.md-default-theme.app-toolbar {
     }
   }
 
-  .toolbar-wrapper {
-    padding-left: 18px;
-  }
   .toolbar-content {
     max-width: 78%;
+    padding-left: 6px;
+  }
+
+  .top-menu a {
+    text-overflow: ellipsis;
   }
 
   .back-button {
-    margin: 0;
+    margin: 3px 0 0 0;
   }
 
   .site-logo {
@@ -63,13 +65,34 @@ md-toolbar.md-default-theme.app-toolbar {
     margin-left: -90px;
     top: 10px;
   }
-  h3 {
-    margin-left: 0;
-  }
 }
 
-.raid-logs {
-  .md-subhead, md-icon {
-    color: $light-contrast-color;
+.aside {
+  md-card-title {
+    padding-bottom: 0;
+
+    md-icon {
+      margin-top: 3px;
+
+      color: inherit;
+      font-size: inherit;
+    }
+
+    .md-headline {
+      font-size: 120%;
+    }
+  }
+
+  .md-list-item-inner {
+    padding: 0;
+
+    a {
+      padding: 0 16px;
+    }
+
+    md-icon {
+      color: inherit;
+      margin-bottom: 3px;
+    }
   }
 }

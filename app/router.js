@@ -9,8 +9,8 @@ const AppRouter = Router.extend({
 
 AppRouter.map(function() {
   this.route('post', { path: '/posts/:post_id' });
-  this.route('recruitment');
   this.route('info');
+  this.route('rules');
 });
 
 export default AppRouter;
